@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futebol 2D - Jogo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #2c3e50;
+      height: 100vh;
+      color: white;
+    }
+    canvas {
+      background-color: #1abc9c;
+    }
+    #menu {
+      position: absolute;
+      text-align: center;
+      color: white;
+    }
+    #menu h1 {
+      font-size: 40px;
+    }
+    #menu button {
+      font-size: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background-color: #e74c3c;
+      color: white;
+      margin-top: 20px;
+    }
+    #menu select {
+      font-size: 20px;
+      padding: 5px;
+      margin-top: 10px;
+    }
+    #scoreboard {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+    }
+    #endgame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 30px;
+    }
+    #endgame button {
+      padding: 15px 30px;
+      font-size: 24px;
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="menu">
+    <h1>Jogo de Futebol 2D</h1>
+    <label for="teamSelection">Escolha seu time:</label><br>
+    <select id="teamSelection">
+      <option value="Palmeiras">Palmeiras</option>
+      <option value="Flamengo">Flamengo</option>
+      <option value="São Paulo">São Paulo</option>
+      <option value="Corinthians">Corinthians</option>
+      <option value="Real Madrid">Real Madrid</option>
+      <option value="Barcelona">Barcelona</option>
+      <option value="PSG">PSG</option>
+      <option value="Chelsea">Chelsea</option>
+      <option value="Milan">Milan</option>
+      <option value="Manchester City">Manchester City</option>
+    </select><br>
+    <button onclick="startGame()">Jogar</button>
+  </div>
+
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+  <div id="scoreboard">
+    <span id="playerScore">0</span> - <span id="iaScore">0</span>
+  </div>
+
+  <div id="endgame" style="display: none;">
+    <h1 id="resultText">Fim de Jogo</h1>
+    <button onclick="restartGame()">Jogar novamente</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
